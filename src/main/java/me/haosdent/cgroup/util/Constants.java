@@ -13,6 +13,9 @@ public class Constants {
   public static final String SHELL_CG_SET = "cgset -r %s=\"%s\" %s";
   public static final String SHELL_CG_GET = "cgget -r %s %s";
   public static final String SHELL_CG_CLASSIFY = "cgclassify -g %s:%s %s";
+
+  public static final String SHELL_APPEND_TID = "sh -c 'echo \"%s\" >> /sys/fs/cgroup/%s/%s/tasks'";
+
   public static final String SHELL_CG_EXEC = "cgexec -g %s:%s %s %s";
 
   public static final int SUBSYS_COMMON = 0;

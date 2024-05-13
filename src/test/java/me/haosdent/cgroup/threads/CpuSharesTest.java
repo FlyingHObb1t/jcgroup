@@ -1,4 +1,4 @@
-package me.haosdent.cgroup;
+package me.haosdent.cgroup.threads;
 
 import me.haosdent.cgroup.manage.Admin;
 import me.haosdent.cgroup.manage.Group;
@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 import java.util.List;
 
-public class ExampleTest {
+public class CpuSharesTest {
 
-  private static final Logger LOG = LoggerFactory.getLogger(ExampleTest.class);
+  private static final Logger LOG = LoggerFactory.getLogger(CpuSharesTest.class);
   private static Admin admin;
   private static Group root;
   private static Group one;

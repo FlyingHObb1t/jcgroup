@@ -37,7 +37,7 @@ public class Shell {
   public Shell() {
   }
 
-  private static StringBuilder getSubsystemsFlag(int subsystems) {
+  public static StringBuilder getSubsystemsFlag(int subsystems) {
     StringBuilder sb = new StringBuilder();
     if ((subsystems & SUBSYS_BLKIO) != 0) {
       sb.append(SUBSYS_BLKIO_STR);
@@ -139,6 +139,13 @@ public class Shell {
         String.format(SHELL_CG_CLASSIFY, getSubsystemsFlag(subsystems), group,
                 task);
     exec(cmd, true);
+  }
+
+  public void cgAppendTask(String group, int subsystems, int task) throws  IOException {
+    for (String subsystem : getSubsystemsFlag(subsystems).toString().split(",")) {
+      String cmd = String.format(SHELL_APPEND_TID, task, subsystem, group);
+      exec(cmd, true);
+    }
   }
 
   public void cgset(String group, String prop, String value) throws IOException {

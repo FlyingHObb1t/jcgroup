@@ -44,7 +44,8 @@ public abstract class Common {
   }
 
   public void addTask(int task) throws IOException {
-    shell.cgclassify(group.getName(), getSubsys(), task);
+//    shell.cgclassify(group.getName(), getSubsys(), task);
+    shell.cgAppendTask(group.getName(), getSubsys(), task);
     taskList.add(task);
   }
 
